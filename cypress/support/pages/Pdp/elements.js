@@ -12,6 +12,6 @@ export const ELEMENTS = {
 
     //Seleção de elemento por atributo HTML
     textAreaReview: '[placeholder="Add Review Here!"]',
-    inputQuantity: '[name="quantity"]'
+    inputQuantity: '[name="quantity"]' 
 
 }
