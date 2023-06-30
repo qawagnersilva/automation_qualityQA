@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+import dataSignup from '../../../fixtures/dataSignup.json'
 
 const elsignup = require('./elements').ELEMENTS
 
@@ -14,66 +15,66 @@ class Signup {
 
     SignUpInputs() {
         if (Cypress.env('country') === "BRA") {
-            cy.get(elsignup.signupNameInput).type('Wagner Gomes')
-            cy.get(elsignup.signupEmailInput).type('wagner.silva@acct.global')
+            cy.get(elsignup.signupNameInput).type(dataSignup.brName)
+            cy.get(elsignup.signupEmailInput).type(dataSignup.brPass)
         } else if (Cypress.env('country') === "USA") {
-            cy.get(elsignup.signupNameInput).type('Bryan James')
-            cy.get(elsignup.signupEmailInput).type('brayan.james@gmail.com')
+            cy.get(elsignup.signupNameInput).type(dataSignup.usName)
+            cy.get(elsignup.signupEmailInput).type(dataSignup.usPass)
         } else if (Cypress.env('country') === "ALE") {
-            cy.get(elsignup.signupNameInput).type('Oliver Kahn')
-            cy.get(elsignup.signupEmailInput).type('oliver@gmail.com')
-        } 
+            cy.get(elsignup.signupNameInput).type(dataSignup.aleName)
+            cy.get(elsignup.signupEmailInput).type(dataSignup.alePass)
+        }
     }
 
     form() {
         if (Cypress.env('country') === "BRA") {
             cy.get(elsignup.genderRadio).check()
-            cy.get(elsignup.passwordInput).type('abcd1234')
+            cy.get(elsignup.passwordInput).type(dataSignup.passwordForm)
             cy.get(elsignup.daySelect).select(5)
             cy.get(elsignup.monthSelect).select(10)
-            cy.get(elsignup.yearSelect).select('1994')
-            cy.get(elsignup.firstNameInput).type('Wagner')
-            cy.get(elsignup.lastNameInput).type('Gomes')
-            cy.get(elsignup.companyInput).type('Quality')
-            cy.get(elsignup.adress1Input).type('Rua Lourenço Zanette')
-            cy.get(elsignup.adress2Input).type('Rua Joaquim nabuco')
-            cy.get(elsignup.countrySelect).select('Canada')
-            cy.get(elsignup.stateInput).type('Santa Catarina')
-            cy.get(elsignup.cityInput).type('Criciúma')
-            cy.get(elsignup.zipcodeInput).type('88809-470')
-            cy.get(elsignup.mobileNumberInput).type('48-996247927')
+            cy.get(elsignup.yearSelect).select(dataSignup.yearFormBRA)
+            cy.get(elsignup.firstNameInput).type(dataSignup.firstNameBRA)
+            cy.get(elsignup.lastNameInput).type(dataSignup.lastNameBRA)
+            cy.get(elsignup.companyInput).type(dataSignup.companyBRA)
+            cy.get(elsignup.adress1Input).type(dataSignup.adress1BRA)
+            cy.get(elsignup.adress2Input).type(dataSignup.adress2BRA)
+            cy.get(elsignup.countrySelect).select(dataSignup.brazil)
+            cy.get(elsignup.stateInput).type(dataSignup.stateBRA)
+            cy.get(elsignup.cityInput).type(dataSignup.cityBRA)
+            cy.get(elsignup.zipcodeInput).type(dataSignup.zipCodeBRA)
+            cy.get(elsignup.mobileNumberInput).type(dataSignup.mobileBRA)
         } else if (Cypress.env('country') === "USA") {
             cy.get(elsignup.genderRadio).check()
-            cy.get(elsignup.passwordInput).type('abcd1234')
+            cy.get(elsignup.passwordInput).type(dataSignup.passwordForm)
             cy.get(elsignup.daySelect).select(5)
             cy.get(elsignup.monthSelect).select(10)
-            cy.get(elsignup.yearSelect).select('1994')
-            cy.get(elsignup.firstNameInput).type('Brayan')
-            cy.get(elsignup.lastNameInput).type('James')
-            cy.get(elsignup.companyInput).type('Apple')
-            cy.get(elsignup.adress1Input).type('Pennsylvania Avenue')
-            cy.get(elsignup.adress2Input).type('Pennsylvania Avenue Blue')
-            cy.get(elsignup.countrySelect).select('United States')
-            cy.get(elsignup.stateInput).type('Flórida')
-            cy.get(elsignup.cityInput).type('Orlando')
-            cy.get(elsignup.zipcodeInput).type('88856475')
-            cy.get(elsignup.mobileNumberInput).type('407-85698547')
+            cy.get(elsignup.yearSelect).select(dataSignup.yearFormUSA)
+            cy.get(elsignup.firstNameInput).type(dataSignup.firstNameUSA)
+            cy.get(elsignup.lastNameInput).type(dataSignup.lastNameUSA)
+            cy.get(elsignup.companyInput).type(dataSignup.companyUSA)
+            cy.get(elsignup.adress1Input).type(dataSignup.adress1USA)
+            cy.get(elsignup.adress2Input).type(dataSignup.adress2USA)
+            cy.get(elsignup.countrySelect).select(dataSignup.usa)
+            cy.get(elsignup.stateInput).type(dataSignup.stateUSA)
+            cy.get(elsignup.cityInput).type(dataSignup.cityUSA)
+            cy.get(elsignup.zipcodeInput).type(dataSignup.zipCodeUSA)
+            cy.get(elsignup.mobileNumberInput).type(dataSignup.mobileUSA)
         } else if (Cypress.env('country') === "ALE") {
             cy.get(elsignup.genderRadio).check()
             cy.get(elsignup.passwordInput).type('abcd1234')
             cy.get(elsignup.daySelect).select(5)
             cy.get(elsignup.monthSelect).select(10)
-            cy.get(elsignup.yearSelect).select('1980')
-            cy.get(elsignup.firstNameInput).type('Oliver')
-            cy.get(elsignup.lastNameInput).type('Kahn')
-            cy.get(elsignup.companyInput).type('Seleção alemã')
-            cy.get(elsignup.adress1Input).type('Unter den Linden em  2.')
-            cy.get(elsignup.adress2Input).type('Karl-Marx-Allee')
-            cy.get(elsignup.countrySelect).select('Canada')
-            cy.get(elsignup.stateInput).type('Koln')
-            cy.get(elsignup.cityInput).type('Berlim')
-            cy.get(elsignup.zipcodeInput).type('88809-470')
-            cy.get(elsignup.mobileNumberInput).type('458-48849048')
+            cy.get(elsignup.yearSelect).select(dataSignup.yearFormALE)
+            cy.get(elsignup.firstNameInput).type(dataSignup.firstNameALE)
+            cy.get(elsignup.lastNameInput).type(dataSignup.lastNameALE)
+            cy.get(elsignup.companyInput).type(dataSignup.companyALE)
+            cy.get(elsignup.adress1Input).type(dataSignup.adress1ALE)
+            cy.get(elsignup.adress2Input).type(dataSignup.adress2ALE)
+            cy.get(elsignup.countrySelect).select(dataSignup.germany)
+            cy.get(elsignup.stateInput).type(dataSignup.stateALE)
+            cy.get(elsignup.cityInput).type(dataSignup.cityALE)
+            cy.get(elsignup.zipcodeInput).type(dataSignup.zipCodeALE)
+            cy.get(elsignup.mobileNumberInput).type(dataSignup.mobileALE)
         }
     }
 
